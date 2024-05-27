@@ -20,7 +20,7 @@
     JSONMinified = "json-minified",
   }
 
-  let selectedTab = $state(Tab.Solidity);
+  let selectedTab = $state(Tab.Source);
   const selectTab = (tab: Tab) => () => (selectedTab = tab);
 </script>
 
