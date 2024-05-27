@@ -30,7 +30,7 @@
       notification.error("Something went wrong, please try again.");
     }
 
-    await goto(`/${id}`);
+    await goto(`/${json.id}`);
   };
 </script>
 
