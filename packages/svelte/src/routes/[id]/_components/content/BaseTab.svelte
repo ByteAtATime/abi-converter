@@ -10,17 +10,17 @@
 
 <div class="w-full max-w-screen-lg">
   <div class="container mx-auto w-full">
-    <div class="mb-4 flex flex-col items-center">
-      <h2 class="text-sm font-bold uppercase tracking-wider">Contracts</h2>
-
-      {#if contractNames.length > 1}
+    {#if contractNames.length > 1}
+      <div class="mb-4 flex flex-col items-center">
+        <h2 class="text-sm font-bold uppercase tracking-wider">Contracts</h2>
+      
         <div class="flex gap-x-2">
           {#each contractNames as contractName, i}
             <ContractTab {contractName} onclick={selectContract(i)} selected={selectedContract === i} />
           {/each}
         </div>
-      {/if}
-    </div>
+      </div>
+    {/if}
 
     <slot abi={contract.abis[contractNames[selectedContract]].abi} contractName={contractNames[selectedContract]} />
   </div>
