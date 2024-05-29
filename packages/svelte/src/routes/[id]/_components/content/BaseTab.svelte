@@ -13,11 +13,13 @@
     <div class="mb-4 flex flex-col items-center">
       <h2 class="text-sm font-bold uppercase tracking-wider">Contracts</h2>
 
-      <div class="flex gap-x-2">
-        {#each contractNames as contractName, i}
-          <ContractTab {contractName} onclick={selectContract(i)} selected={selectedContract === i} />
-        {/each}
-      </div>
+      {#if contractNames.length > 1}
+        <div class="flex gap-x-2">
+          {#each contractNames as contractName, i}
+            <ContractTab {contractName} onclick={selectContract(i)} selected={selectedContract === i} />
+          {/each}
+        </div>
+      {/if}
     </div>
 
     <slot abi={contract.abis[contractNames[selectedContract]].abi} contractName={contractNames[selectedContract]} />
