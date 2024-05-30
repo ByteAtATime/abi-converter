@@ -15,7 +15,6 @@
       license: "MIT",
       outputAttribution: false,
       outputSource: false,
-      solidityVersion: "^0.8.0",
     });
 
     return format(solidity, {
